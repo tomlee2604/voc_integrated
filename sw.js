@@ -1,10 +1,10 @@
 const CACHE_NAME = 'voc-report-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png'
+  '/voc_integrated/',
+  '/voc_integrated/index.html',
+  '/voc_integrated/manifest.json',
+  '/voc_integrated/icon-192.png',
+  '/voc_integrated/icon-512.png'
 ];
 
 self.addEventListener('install', event => {
