@@ -462,6 +462,32 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
   .board-org-selects { flex-direction: column !important; }
   .board-org-selects > div { min-width: 100% !important; }
 
+  /* 소통게시판 칭찬 작성 폼 모바일 개선 */
+  #board-praise > div {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  #board-praise > div > div[style*="display:flex"] {
+    flex-direction: column;
+    gap: 12px;
+  }
+  #board-praise input#p-author,
+  #board-praise select#p-center,
+  #board-praise input#p-target,
+  #board-praise textarea#p-content,
+  #board-praise button[onclick*="submitPost"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
+  #board-praise input,
+  #board-praise select,
+  #board-praise textarea {
+    min-width: 0 !important;
+  }
+
   /* ── YoY 대시보드 모바일 ── */
   #yoy-section .kpi-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   #yoy-section .kpi-card { padding: 12px 10px; }
