@@ -1,4 +1,4 @@
-const CACHE_NAME = 'voc-report-v2';
+const CACHE_NAME = 'voc-report-v3';
 const urlsToCache = [
   '/voc_integrated/',
   '/voc_integrated/index.html',
