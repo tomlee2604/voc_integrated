@@ -730,9 +730,9 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
 
     <!-- 로그인 타입 탭 -->
     <div id="loginTabs" style="display:flex;gap:4px;background:var(--surface2);border-radius:10px;padding:3px;margin-bottom:20px">
-      <button onclick="switchLoginTab('master')" class="loginTabBtn active" data-tab="master" style="flex:1;padding:9px 6px;text-align:center;font-size:12px;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .2s;background:var(--text);color:#fff">🔑 마스터</button>
-      <button onclick="switchLoginTab('site')" class="loginTabBtn" data-tab="site" style="flex:1;padding:9px 6px;text-align:center;font-size:12px;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .2s;background:transparent;color:var(--text-3)">🏢 물류센터</button>
-      <button onclick="switchLoginTab('rep')" class="loginTabBtn" data-tab="rep" style="flex:1;padding:9px 6px;text-align:center;font-size:12px;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .2s;background:transparent;color:var(--text-3)">👤 개인</button>
+      <button onclick="switchLoginTab('master')" class="loginTabBtn active" data-tab="master" style="width:100%;padding:9px 6px;text-align:center;font-size:12px;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .2s;background:var(--text);color:#fff">🔑 마스터</button>
+      <button onclick="switchLoginTab('site')" class="loginTabBtn" data-tab="site" style="width:100%;padding:9px 6px;text-align:center;font-size:12px;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .2s;background:transparent;color:var(--text-3)">🏢 물류센터</button>
+      <button onclick="switchLoginTab('rep')" class="loginTabBtn" data-tab="rep" style="width:100%;padding:9px 6px;text-align:center;font-size:12px;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .2s;background:transparent;color:var(--text-3)">👤 개인</button>
     </div>
 
     <!-- 마스터 로그인 -->
@@ -855,9 +855,9 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
     <div id="changePwdError" style="font-size:12px;color:var(--red);margin-bottom:10px;display:none;text-align:center;font-weight:500"></div>
     <div style="display:flex;gap:8px">
       <button onclick="closeChangePwd()"
-        style="flex:1;padding:13px;border:1px solid var(--border);border-radius:10px;background:var(--surface2);color:var(--text-2);font-size:14px;font-weight:600;font-family:'Noto Sans KR',sans-serif;cursor:pointer">취소</button>
+        style="width:100%;padding:13px;border:1px solid var(--border);border-radius:10px;background:var(--surface2);color:var(--text-2);font-size:14px;font-weight:600;font-family:'Noto Sans KR',sans-serif;cursor:pointer">취소</button>
       <button onclick="doChangePwd()"
-        style="flex:1;padding:13px;border:none;border-radius:10px;background:var(--text);color:#fff;font-size:14px;font-weight:700;font-family:'Noto Sans KR',sans-serif;cursor:pointer"
+        style="width:100%;padding:13px;border:none;border-radius:10px;background:var(--text);color:#fff;font-size:14px;font-weight:700;font-family:'Noto Sans KR',sans-serif;cursor:pointer"
         onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">변경하기</button>
     </div>
   </div>
@@ -1342,11 +1342,11 @@ function openPrintModal() {
     <div style="font-size:12px;color:#8F8D88;margin-bottom:20px">출력할 대시보드를 선택하세요</div>
     <div id="__pscList">${checks}</div>
     <div style="display:flex;gap:6px;margin-top:8px">
-      <button onclick="document.querySelectorAll('#__pscList input').forEach(c=>c.checked=true)" style="flex:1;padding:8px;font-size:12px;font-family:'Noto Sans KR',sans-serif;border:1px solid #E4E2DB;border-radius:7px;background:#F2F1ED;color:#5A5954;cursor:pointer">전체 선택</button>
-      <button onclick="document.querySelectorAll('#__pscList input').forEach(c=>c.checked=false)" style="flex:1;padding:8px;font-size:12px;font-family:'Noto Sans KR',sans-serif;border:1px solid #E4E2DB;border-radius:7px;background:#F2F1ED;color:#5A5954;cursor:pointer">전체 해제</button>
+      <button onclick="document.querySelectorAll('#__pscList input').forEach(c=>c.checked=true)" style="width:100%;padding:8px;font-size:12px;font-family:'Noto Sans KR',sans-serif;border:1px solid #E4E2DB;border-radius:7px;background:#F2F1ED;color:#5A5954;cursor:pointer">전체 선택</button>
+      <button onclick="document.querySelectorAll('#__pscList input').forEach(c=>c.checked=false)" style="width:100%;padding:8px;font-size:12px;font-family:'Noto Sans KR',sans-serif;border:1px solid #E4E2DB;border-radius:7px;background:#F2F1ED;color:#5A5954;cursor:pointer">전체 해제</button>
     </div>
     <div style="display:flex;gap:8px;margin-top:14px">
-      <button onclick="document.getElementById('__printSelectModal').remove()" style="flex:1;padding:12px;font-size:14px;font-weight:600;font-family:'Noto Sans KR',sans-serif;border:1px solid #E4E2DB;border-radius:10px;background:#F2F1ED;color:#5A5954;cursor:pointer">취소</button>
+      <button onclick="document.getElementById('__printSelectModal').remove()" style="width:100%;padding:12px;font-size:14px;font-weight:600;font-family:'Noto Sans KR',sans-serif;border:1px solid #E4E2DB;border-radius:10px;background:#F2F1ED;color:#5A5954;cursor:pointer">취소</button>
       <button onclick="executePrint()" style="flex:2;padding:12px;font-size:14px;font-weight:700;font-family:'Noto Sans KR',sans-serif;border:none;border-radius:10px;background:#1A1917;color:#fff;cursor:pointer">인쇄하기</button>
     </div>`;
 
@@ -2856,21 +2856,21 @@ setTimeout(()=>{['csmChart','praiseCsmChart'].forEach(id=>{const c=document.getE
   <!-- 작성 폼 -->
   <div style="background:var(--card-bg,#fff);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:24px;box-shadow:var(--shadow-sm,0 1px 4px rgba(0,0,0,.06))">
     <h3 style="font-size:15px;font-weight:700;margin-bottom:16px;color:var(--text)">✍️ 노하우 작성하기</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
-      <input id="ackh2-author" placeholder="작성자 이름 (CSM명)" style="padding:11px 14px;border:1px solid var(--border);border-radius:9px;background:var(--input-bg,#f8f8f6);color:var(--text);font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none">
-      <select id="ackh2-center" style="padding:11px 14px;border:1px solid var(--border);border-radius:9px;background:var(--input-bg,#f8f8f6);color:var(--text);font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;cursor:pointer">
+    <div style="display:block;margin-bottom:10px">
+      <input id="ackh2-author" placeholder="작성자 이름 (CSM명)" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1px solid var(--border);border-radius:9px;background:var(--input-bg,#f8f8f6);color:var(--text);font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none">
+      <select id="ackh2-center" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1px solid var(--border);border-radius:9px;background:var(--input-bg,#f8f8f6);color:var(--text);font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;cursor:pointer">
         <option value="">센터 선택</option>
         <option>경기물류센타</option><option>인천배송</option><option>전주물류센타</option>
         <option>청원배송</option><option>장유물류센타</option><option>대구배송</option><option>제주배송</option>
       </select>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
-      <select id="ackh2-product" style="padding:11px 14px;border:1px solid var(--border);border-radius:9px;background:var(--input-bg,#f8f8f6);color:var(--text);font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;cursor:pointer">
+    <div style="display:block;margin-bottom:10px">
+      <select id="ackh2-product" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1px solid var(--border);border-radius:9px;background:var(--input-bg,#f8f8f6);color:var(--text);font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;cursor:pointer">
         <option value="">에어컨 종류</option>
         <option>RAC (벽걸이)</option><option>PAC (스탠드)</option><option>시스템에어컨</option>
         <option>멀티에어컨</option><option>B2B 에어컨</option><option>공통</option>
       </select>
-      <select id="ackh2-situation" style="padding:11px 14px;border:1px solid var(--border);border-radius:9px;background:var(--input-bg,#f8f8f6);color:var(--text);font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;cursor:pointer">
+      <select id="ackh2-situation" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1px solid var(--border);border-radius:9px;background:var(--input-bg,#f8f8f6);color:var(--text);font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;cursor:pointer">
         <option value="">상황 유형</option>
         <option>설치 팁</option><option>고층·협소 공간</option><option>추가비용 설명</option>
         <option>누수·누전 예방</option><option>타공·배관</option><option>고객 응대</option><option>문제상황 해결</option>
@@ -4333,8 +4333,8 @@ try { renderYoY(); } catch(e) { console.warn('YoY init:', e); }
             </div>
           </div>
           ${canEdit ? `<div style="display:flex;gap:4px;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">
-            <button onclick="event.stopPropagation();boardUI.showForm('${bt}','${p.id}')" style="flex:1;padding:6px;font-size:11px;font-weight:600;font-family:'Noto Sans KR',sans-serif;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text-2);cursor:pointer">✏️ 수정</button>
-            <button onclick="event.stopPropagation();boardUI.deletePost('${bt}','${p.id}')" style="flex:1;padding:6px;font-size:11px;font-weight:600;font-family:'Noto Sans KR',sans-serif;border:1px solid var(--red-light);border-radius:6px;background:var(--red-light);color:var(--red);cursor:pointer">🗑️ 삭제</button>
+            <button onclick="event.stopPropagation();boardUI.showForm('${bt}','${p.id}')" style="width:100%;padding:6px;font-size:11px;font-weight:600;font-family:'Noto Sans KR',sans-serif;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text-2);cursor:pointer">✏️ 수정</button>
+            <button onclick="event.stopPropagation();boardUI.deletePost('${bt}','${p.id}')" style="width:100%;padding:6px;font-size:11px;font-weight:600;font-family:'Noto Sans KR',sans-serif;border:1px solid var(--red-light);border-radius:6px;background:var(--red-light);color:var(--red);cursor:pointer">🗑️ 삭제</button>
           </div>` : ''}
         </div>`;
       });
@@ -4476,15 +4476,15 @@ try { renderYoY(); } catch(e) { console.warn('YoY init:', e); }
         <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:14px">
           <div style="font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:10px">🏢 소속 조직</div>
           <div class="board-org-selects" style="display:flex;gap:8px;flex-wrap:wrap">
-            <div style="flex:1;min-width:140px">
+            <div style="width:100%;min-width:140px">
               <div style="font-size:11px;color:var(--text-3);margin-bottom:4px">물류센터</div>
               <select class="board-form-select" id="${bt}FSite" style="width:100%" ${!isMaster&&role!=='master'?'':''}>${siteOpts}</select>
             </div>
-            <div style="flex:1;min-width:140px">
+            <div style="width:100%;min-width:140px">
               <div style="font-size:11px;color:var(--text-3);margin-bottom:4px">대표CSM</div>
               <select class="board-form-select" id="${bt}FRep" style="width:100%">${repOpts}</select>
             </div>
-            <div style="flex:1;min-width:140px">
+            <div style="width:100%;min-width:140px">
               <div style="font-size:11px;color:var(--text-3);margin-bottom:4px">하위CSM</div>
               <select class="board-form-select" id="${bt}FCsm" style="width:100%">${csmOpts}</select>
             </div>
@@ -5733,9 +5733,9 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 
 <!-- Board sub-tabs -->
 <div style="display:flex;gap:4px;margin-bottom:24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px">
-  <button class="tab-btn praise active" onclick="switchBoard('praise',this)" style="flex:1;padding:12px;font-size:14px;border-radius:8px" id="boardTabPraise">👍 칭찬합니다 <span style="font-family:Outfit;font-size:12px;font-weight:700;padding:2px 8px;border-radius:100px;background:rgba(255,255,255,.2)" id="praiseCnt">0</span></button>
-  <button class="tab-btn suggest" onclick="switchBoard('suggest',this)" style="flex:1;padding:12px;font-size:14px;border-radius:8px" id="boardTabSuggest">📝 건의사항 <span style="font-family:Outfit;font-size:12px;font-weight:700;padding:2px 8px;border-radius:100px;background:rgba(255,255,255,.2)" id="suggestCnt">0</span></button>
-  <button class="tab-btn" onclick="switchBoard('knowhow',this)" style="flex:1;padding:12px;font-size:14px;border-radius:8px" id="boardTabKnowhow">🔧 설치 노하우 <span style="font-family:Outfit;font-size:12px;font-weight:700;padding:2px 8px;border-radius:100px;background:rgba(255,255,255,.2)" id="knowhowCnt">0</span></button>
+  <button class="tab-btn praise active" onclick="switchBoard('praise',this)" style="width:100%;padding:12px;font-size:14px;border-radius:8px" id="boardTabPraise">👍 칭찬합니다 <span style="font-family:Outfit;font-size:12px;font-weight:700;padding:2px 8px;border-radius:100px;background:rgba(255,255,255,.2)" id="praiseCnt">0</span></button>
+  <button class="tab-btn suggest" onclick="switchBoard('suggest',this)" style="width:100%;padding:12px;font-size:14px;border-radius:8px" id="boardTabSuggest">📝 건의사항 <span style="font-family:Outfit;font-size:12px;font-weight:700;padding:2px 8px;border-radius:100px;background:rgba(255,255,255,.2)" id="suggestCnt">0</span></button>
+  <button class="tab-btn" onclick="switchBoard('knowhow',this)" style="width:100%;padding:12px;font-size:14px;border-radius:8px" id="boardTabKnowhow">🔧 설치 노하우 <span style="font-family:Outfit;font-size:12px;font-weight:700;padding:2px 8px;border-radius:100px;background:rgba(255,255,255,.2)" id="knowhowCnt">0</span></button>
 </div>
 
 <!-- 칭찬합니다 -->
@@ -5821,12 +5821,12 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
       </select>
     </div>
     <div style="display:block;margin-bottom:12px">
-      <select id="kh-product" style="width:100%;min-width:140px;padding:12px 16px;border:1px solid var(--border);border-radius:10px;background:var(--surface2);color:var(--text);font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;cursor:pointer">
+      <select id="kh-product" style="width:100%;box-sizing:border-box;min-width:140px;padding:12px 16px;border:1px solid var(--border);border-radius:10px;background:var(--surface2);color:var(--text);font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;cursor:pointer">
         <option value="">제품 카테고리</option>
         <option>냉장고</option><option>세탁기/건조기</option>
         <option>TV</option><option>기타 가전</option><option>공통</option>
       </select>
-      <select id="kh-situation" style="width:100%;min-width:140px;padding:12px 16px;border:1px solid var(--border);border-radius:10px;background:var(--surface2);color:var(--text);font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;cursor:pointer">
+      <select id="kh-situation" style="width:100%;box-sizing:border-box;min-width:140px;padding:12px 16px;border:1px solid var(--border);border-radius:10px;background:var(--surface2);color:var(--text);font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;cursor:pointer">
         <option value="">상황 유형</option>
         <option>설치 팁</option><option>고층·협소 공간</option><option>추가비용 설명</option>
         <option>고객 응대</option><option>문제상황 해결</option><option>기타 노하우</option>
@@ -8296,7 +8296,7 @@ function renderNotices(){
     var deleteBtn = canDelete ? '<button onclick="deleteNotice('+n.id+')" style="border:none;background:none;color:var(--text3);cursor:pointer;font-size:12px;flex-shrink:0"">✕</button>' : '';
     return '<div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:8px;background:'+bg+';border:'+border+';margin-bottom:4px">'+
       '<span style="font-size:14px;flex-shrink:0">'+(isImportant?'🔴':'📋')+'</span>'+
-      '<div style="flex:1;min-width:0">'+
+      '<div style="width:100%;min-width:0">'+
         '<div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">'+
           scopeBadge+
           '<span style="font-size:12px;font-weight:600;color:var(--text)">'+n.author+'</span>'+
@@ -9213,7 +9213,7 @@ window.GA_print = function(tabId) {
 
   <!-- 버튼 -->
   <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
-    <button id="pdfGenBtn" onclick="window.generatePdf()" style="flex:1;padding:11px;border:none;border-radius:10px;background:var(--accent,#3b82f6);color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">🖨️ PDF 출력</button>
+    <button id="pdfGenBtn" onclick="window.generatePdf()" style="width:100%;padding:11px;border:none;border-radius:10px;background:var(--accent,#3b82f6);color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">🖨️ PDF 출력</button>
     <button onclick="window.closePdfModal()" style="padding:11px 18px;border:1px solid var(--border,#2e3650);border-radius:10px;background:none;color:var(--text2,#b0bac9);font-size:14px;cursor:pointer;font-family:inherit">취소</button>
   </div>
   <div id="pdfGenMsg" style="display:none;margin-top:10px;font-size:12px;text-align:center;color:var(--accent2,#10b981)"></div>
