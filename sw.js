@@ -1,4 +1,4 @@
-const CACHE_NAME = 'voc-report-v3';
+const CACHE_NAME = 'voc-report-v5';
 const urlsToCache = [
   '/voc_integrated/',
   '/voc_integrated/index.html',
@@ -12,6 +12,16 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
       .then(cache => cache.addAll(urlsToCache))
   );
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    )
+  );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {
@@ -25,5 +35,4 @@ self.addEventListener('fetch', event => {
       }
     )
   );
-});</content>
-<parameter name="filePath">c:\Users\etland\Desktop\claude\통합 VOC\sw.js
+});
