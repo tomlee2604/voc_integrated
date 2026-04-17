@@ -5845,6 +5845,13 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
       <button onclick="document.getElementById('kh-photos').click()" style="padding:8px 16px;border:1px dashed var(--border);border-radius:8px;background:var(--surface2);color:var(--text3);font-size:13px;cursor:pointer;font-family:inherit">+ 사진 선택</button>
       <div id="kh-photo-preview" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"></div>
     </div>
+    <!-- 영상 업로드 -->
+    <div style="margin-bottom:14px">
+      <label style="display:block;font-size:12px;color:var(--text3);margin-bottom:6px">🎬 영상 첨부 (선택, 최대 1개, 50MB)</label>
+      <input type="file" id="kh-video" accept="video/*" style="display:none" onchange="window.khVideoPreview()">
+      <button onclick="document.getElementById('kh-video').click()" style="padding:8px 16px;border:1px dashed var(--border);border-radius:8px;background:var(--surface2);color:var(--text3);font-size:13px;cursor:pointer;font-family:inherit">+ 영상 선택</button>
+      <div id="kh-video-info" style="margin-top:8px;font-size:12px;color:var(--text2)"></div>
+    </div>
     <button onclick="window.submitKnowhow()" style="padding:12px 28px;border:none;border-radius:10px;background:#7c3aed;color:#fff;font-size:14px;font-weight:700;font-family:'Noto Sans KR',sans-serif;cursor:pointer">🔧 노하우 등록</button>
   </div>
 
@@ -7036,6 +7043,26 @@ function submitPost(type){
 var _khPosts = [];
 var _khFilter = '전체';
 var _khPhotoData = []; // base64 저장
+var _khVideoData = null; // base64 저장
+
+window.khVideoPreview = function(){
+  var file = document.getElementById('kh-video').files[0];
+  var info = document.getElementById('kh-video-info');
+  if(!file){ _khVideoData = null; info.innerHTML = ''; return; }
+  if(file.size > 50 * 1024 * 1024){
+    alert('영상 파일은 최대 50MB까지 첨부 가능합니다.');
+    document.getElementById('kh-video').value = '';
+    _khVideoData = null; info.innerHTML = ''; return;
+  }
+  info.innerHTML = '읽는 중...';
+  var reader = new FileReader();
+  reader.onload = function(e){
+    _khVideoData = e.target.result;
+    info.innerHTML = '🎬 <strong>' + file.name + '</strong> (' + (file.size/1024/1024).toFixed(1) + 'MB)' +
+      ' <button onclick="_khVideoData=null;document.getElementById(\'kh-video\').value=\'\';document.getElementById(\'kh-video-info\').innerHTML=\'\'" style="margin-left:8px;border:none;background:none;color:var(--text3);cursor:pointer;font-size:12px">✕ 제거</button>';
+  };
+  reader.readAsDataURL(file);
+};
 
 window.khPhotoPreview = function(){
   var files = document.getElementById('kh-photos').files;
@@ -7075,6 +7102,7 @@ window.submitKnowhow = async function(){
     author: author, center: center, product: product || '공통',
     situation: situation || '설치 팁', title: title, content: content,
     photos: _khPhotoData.filter(Boolean),
+    video: _khVideoData || null,
     likes: 0, likedBy: [], comments: []
   };
 
@@ -7092,6 +7120,9 @@ window.submitKnowhow = async function(){
   document.getElementById('kh-photo-preview').innerHTML = '';
   document.getElementById('kh-photos').value = '';
   _khPhotoData = [];
+  document.getElementById('kh-video').value = '';
+  document.getElementById('kh-video-info').innerHTML = '';
+  _khVideoData = null;
 
   alert('노하우가 등록되었습니다! 🎉');
   document.getElementById('knowhowCnt').textContent = posts.length;
@@ -7183,6 +7214,7 @@ window.renderKnowhowList = function(){
     var photoHtml = (p.photos && p.photos.length) ? '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">' + p.photos.map(function(src){
       return '<img src="'+src+'" style="width:80px;height:80px;object-fit:cover;border-radius:8px;border:1px solid var(--border);cursor:pointer" onclick="this.style.width=this.style.width===\'80px\'?\'100%\':\'80px\'">';
     }).join('') + '</div>' : '';
+    var videoHtml = p.video ? '<div style="margin-top:12px"><video src="'+p.video+'" controls style="width:100%;max-height:300px;border-radius:10px;border:1px solid var(--border);background:#000"></video></div>' : '';
     var cmtHtml = (p.comments||[]).map(function(c){
       return '<div style="padding:8px 0;border-top:1px solid var(--border);font-size:12px"><span style="font-weight:600;color:var(--text)">'+c.author+'</span> <span style="color:var(--text3);font-size:10px">'+c.date+'</span><div style="color:var(--text2);margin-top:2px">'+c.text+'</div></div>';
     }).join('');
@@ -7198,6 +7230,7 @@ window.renderKnowhowList = function(){
       '</div>'+
       '<div style="font-size:14px;color:var(--text2);line-height:1.7;white-space:pre-wrap">'+p.content+'</div>'+
       photoHtml+
+      videoHtml+
       '<div style="display:flex;align-items:center;gap:12px;margin-top:14px">'+
         '<button onclick="window.likeKnowhow(\''+p.id+'\')" style="display:flex;align-items:center;gap:5px;padding:6px 14px;border:1px solid '+(liked?'#10b981':'var(--border)')+';border-radius:8px;background:'+(liked?'rgba(16,185,129,.1)':'var(--surface2)')+';color:'+(liked?'#10b981':'var(--text3)')+';font-size:13px;cursor:pointer;font-family:inherit">'+
           '👍 도움돼요 '+(p.likes||0)+
